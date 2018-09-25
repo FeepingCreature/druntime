@@ -16,8 +16,6 @@ module rt.qsort;
 
 //debug=qsort;
 
-private import core.stdc.stdlib;
-
 version (OSX)
     version = Darwin;
 else version (iOS)

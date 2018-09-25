@@ -21,30 +21,41 @@ static if (SharedELF):
 
 // debug = PRINTF;
 import core.memory;
-import core.stdc.stdio;
 import core.stdc.stdlib : calloc, exit, free, malloc, EXIT_FAILURE;
 import core.stdc.string : strlen;
 version (linux)
 {
-    import core.sys.linux.dlfcn;
+    version (Shared)
+    {
+        import core.sys.linux.dlfcn;
+    }
     import core.sys.linux.elf;
     import core.sys.linux.link;
 }
 else version (FreeBSD)
 {
-    import core.sys.freebsd.dlfcn;
+    version (Shared)
+    {
+        import core.sys.freebsd.dlfcn;
+    }
     import core.sys.freebsd.sys.elf;
     import core.sys.freebsd.sys.link_elf;
 }
 else version (NetBSD)
 {
-    import core.sys.netbsd.dlfcn;
+    version (Shared)
+    {
+        import core.sys.netbsd.dlfcn;
+    }
     import core.sys.netbsd.sys.elf;
     import core.sys.netbsd.sys.link_elf;
 }
 else version (DragonFlyBSD)
 {
-    import core.sys.dragonflybsd.dlfcn;
+    version (Shared)
+    {
+        import core.sys.dragonflybsd.dlfcn;
+    }
     import core.sys.dragonflybsd.sys.elf;
     import core.sys.dragonflybsd.sys.link_elf;
 }
@@ -52,12 +63,14 @@ else
 {
     static assert(0, "unimplemented");
 }
-import core.sys.posix.pthread;
+version (Shared)
+{
+    import core.sys.posix.pthread;
+    import rt.util.container.hashtab;
+}
 import rt.deh;
-import rt.dmain2;
 import rt.minfo;
 import rt.util.container.array;
-import rt.util.container.hashtab;
 
 alias DSO SectionGroup;
 struct DSO

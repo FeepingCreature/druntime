@@ -15,10 +15,6 @@
  */
 module core.sys.posix.sys.types;
 
-private import core.sys.posix.config;
-private import core.stdc.stdint;
-public import core.stdc.stddef;
-
 version (OSX)
     version = Darwin;
 else version (iOS)
@@ -29,6 +25,10 @@ else version (WatchOS)
     version = Darwin;
 
 version (Posix):
+
+private import core.sys.posix.config;
+public import core.stdc.stddef;
+
 extern (C):
 
 //

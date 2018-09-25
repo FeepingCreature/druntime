@@ -65,10 +65,10 @@ private:
 
 version (DigitalMars)
 {
-    import core.simd;
-
     template vec(T)
     {
+        import core.simd;
+
         enum regsz = 16; // SSE2
         enum N = regsz / T.sizeof;
         alias vec = __vector(T[N]);
@@ -76,6 +76,8 @@ version (DigitalMars)
 
     void store(T, size_t N)(T* p, in __vector(T[N]) val)
     {
+        import core.simd;
+
         pragma(inline, true);
         alias vec = __vector(T[N]);
 

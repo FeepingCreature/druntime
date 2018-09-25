@@ -9,10 +9,6 @@
  +/
 module core.sys.darwin.netinet.in_;
 
-import core.sys.darwin.sys.cdefs;
-
-public import core.sys.posix.netinet.in_;
-
 version(OSX)
     version = Darwin;
 else version(iOS)
@@ -23,6 +19,10 @@ else version(WatchOS)
     version = Darwin;
 
 version(Darwin):
+
+import core.sys.darwin.sys.cdefs;
+public import core.sys.posix.netinet.in_;
+
 extern(C) nothrow @nogc:
 
 enum IPPROTO_IP = 0;

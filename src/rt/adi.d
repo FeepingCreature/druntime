@@ -18,7 +18,6 @@ private
     debug(adi) import core.stdc.stdio;
     import core.stdc.string;
     import core.stdc.stdlib;
-    import core.memory;
     import rt.util.utf;
 
     extern (C) void[] _adSort(void[] a, TypeInfo ti);

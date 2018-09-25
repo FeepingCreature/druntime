@@ -23,7 +23,6 @@ private
     import core.stdc.config : c_long;
     import core.stdc.stdio;
     import core.stdc.stdlib;
-    import rt.util.utf;
 
     struct BitArray
     {

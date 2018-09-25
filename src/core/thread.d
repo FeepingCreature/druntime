@@ -109,7 +109,7 @@ class ThreadError : Error
 
 private
 {
-    import core.atomic, core.memory, core.sync.mutex;
+    import core.atomic, core.sync.mutex;
 
     //
     // exposed by compiler runtime

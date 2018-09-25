@@ -13,10 +13,9 @@
  */
 module core.sys.linux.sys.time;
 
-private import core.sys.linux.config;
-public import core.sys.posix.sys.time;  // timeval
-
 version (linux):
+
+public import core.sys.posix.sys.time;  // timeval
 
 /* macros provided to operate on timeval structures
  * they are extern(D) because they are not really C symbols, just macros

@@ -8,10 +8,10 @@ module rt.util.container.treap;
 
 static import common = rt.util.container.common;
 import rt.util.random;
-import rt.qsort;
 
 struct Treap(E)
 {
+    import rt.qsort;
 nothrow:
     static struct Node
     {

@@ -9,11 +9,7 @@
 
 module core.internal.parseoptions;
 
-import core.stdc.stdlib;
 import core.stdc.stdio;
-import core.stdc.ctype;
-import core.stdc.string;
-import core.vararg;
 import core.internal.traits : externDFunc;
 
 
@@ -66,6 +62,8 @@ bool initConfigOptions(CFG)(ref CFG cfg, string cfgname)
 */
 bool parseOptions(CFG)(ref CFG cfg, string opt)
 {
+    import core.stdc.ctype;
+
     static if (is(typeof(__traits(getMember, CFG, "errorName"))))
         string errName = cfg.errorName;
     else
@@ -160,6 +158,8 @@ bool parse(T:size_t)(const(char)[] optname, ref inout(char)[] str, ref T res, co
 in { assert(str.length); }
 do
 {
+    import core.stdc.ctype;
+
     size_t i, v;
     for (; i < str.length && isdigit(str[i]); ++i)
         v = 10 * v + str[i] - '0';

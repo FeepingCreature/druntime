@@ -14,7 +14,7 @@
 module gc.bits;
 
 
-import core.bitop;
+static import core.bitop;
 import core.stdc.string;
 import core.stdc.stdlib;
 import core.exception : onOutOfMemoryError;

@@ -14,11 +14,6 @@
  */
 module core.sys.posix.netinet.in_;
 
-private import core.sys.posix.config;
-public import core.stdc.inttypes; // for uint32_t, uint16_t, uint8_t
-public import core.sys.posix.arpa.inet;
-public import core.sys.posix.sys.socket; // for sa_family_t
-
 version (OSX)
     version = Darwin;
 else version (iOS)
@@ -29,6 +24,11 @@ else version (WatchOS)
     version = Darwin;
 
 version (Posix):
+
+public import core.stdc.inttypes; // for uint32_t, uint16_t, uint8_t
+public import core.sys.posix.arpa.inet;
+public import core.sys.posix.sys.socket; // for sa_family_t
+
 extern (C) nothrow @nogc:
 
 //

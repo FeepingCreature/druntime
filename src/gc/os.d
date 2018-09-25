@@ -45,7 +45,6 @@ else version (Posix)
     version (CRuntime_Glibc) import core.sys.linux.sys.mman : MAP_ANON;
     version (Darwin) import core.sys.darwin.sys.mman : MAP_ANON;
     version (CRuntime_UClibc) import core.sys.linux.sys.mman : MAP_ANON;
-    import core.stdc.stdlib;
 
     //version = GC_Use_Alloc_MMap;
 }

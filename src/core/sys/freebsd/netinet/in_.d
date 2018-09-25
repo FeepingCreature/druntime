@@ -9,11 +9,10 @@
  +/
 module core.sys.freebsd.netinet.in_;
 
-import core.sys.freebsd.sys.cdefs;
-
-public import core.sys.posix.netinet.in_;
-
 version(FreeBSD):
+
+import core.sys.freebsd.sys.cdefs;
+public import core.sys.posix.netinet.in_;
 
 extern(C) nothrow @nogc:
 

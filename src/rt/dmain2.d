@@ -16,7 +16,6 @@ private
     import rt.memory;
     import rt.sections;
     import core.atomic;
-    import core.stdc.stddef;
     import core.stdc.stdlib;
     import core.stdc.string;
     import core.stdc.stdio;   // for printf()

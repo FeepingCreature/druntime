@@ -14,9 +14,6 @@
  */
 module core.sys.posix.sys.uio;
 
-private import core.sys.posix.config;
-public import core.sys.posix.sys.types; // for ssize_t
-
 version (OSX)
     version = Darwin;
 else version (iOS)
@@ -27,6 +24,9 @@ else version (WatchOS)
     version = Darwin;
 
 version (Posix):
+
+public import core.sys.posix.sys.types; // for ssize_t
+
 extern (C) nothrow @nogc:
 
 //
